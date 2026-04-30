@@ -71,7 +71,9 @@ To turn it on, tick **Enable Invoice Processor** in OpenRouter Settings:
 
 ### Usage report
 
-The **OpenRouter Usage** report (under Reports) gives you a breakdown of tokens and cost per model / day, pulled from the logs.
+The **OpenRouter Usage** report (under Reports) gives you a breakdown of requests, tokens and cost — filterable by date range, model, and provider — pulled from the logs.
+
+![OpenRouter Usage report](docs/openrouter-usage-report.png)
 
 ## License
 
