@@ -147,23 +147,13 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"openrouter_frappe.tasks.all"
-# 	],
-# 	"daily": [
-# 		"openrouter_frappe.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"openrouter_frappe.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"openrouter_frappe.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"openrouter_frappe.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"cron": {
+		"*/2 * * * *": [
+			"openrouter_frappe.utils.fetch_pending_metadata"
+		]
+	}
+}
 
 # Testing
 # -------

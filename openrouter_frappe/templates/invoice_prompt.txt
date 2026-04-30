@@ -1,0 +1,26 @@
+You are an invoice processing expert. Here are the details about an email recieved on our system along with PDF attachments.
+
+<email>
+    <text_content>{{ doc.text_content }}</text_content>
+    <subject>{{ doc.subject }}</subject>
+</email>
+
+
+If the email has an invoice attached, process the PDF (along with the email context), reply with JSON (e) on this format:
+
+```
+{
+    "supplier_name": "Google Inc.",
+    "currency": "USD",
+    "items": [{
+        "item_name": "Cloud Subscription",
+        "qty": 2,
+        "rate": 10,
+        "amount": 20,
+    }],
+    "posting_date": "14-03-2025",
+    "total_amount": 20.00
+}
+```
+
+IMPORTANT: If there is no invoice, respond with "<NOT-AN-INVOICE>"

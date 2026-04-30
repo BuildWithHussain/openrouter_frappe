@@ -1,23 +1,168 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "hash",
  "creation": "2026-04-29 12:36:13.671900",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "generation_id",
+  "model",
+  "provider_name",
+  "finish_reason",
+  "usage_section",
+  "prompt_tokens",
+  "cached_tokens",
+  "completion_tokens",
+  "column_break_tokens",
+  "reasoning_tokens",
+  "total_tokens",
+  "cost_section",
+  "total_cost",
+  "cache_discount",
+  "column_break_cost",
+  "generation_time_ms",
+  "latency_ms",
+  "metadata_fetched",
+  "raw_section",
   "reply"
  ],
  "fields": [
   {
+   "fieldname": "generation_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Generation ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Model",
+   "read_only": 1
+  },
+  {
+   "fieldname": "provider_name",
+   "fieldtype": "Data",
+   "label": "Provider",
+   "read_only": 1
+  },
+  {
+   "fieldname": "finish_reason",
+   "fieldtype": "Data",
+   "label": "Finish Reason",
+   "read_only": 1
+  },
+  {
+   "fieldname": "usage_section",
+   "fieldtype": "Section Break",
+   "label": "Token Usage"
+  },
+  {
+   "fieldname": "prompt_tokens",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Prompt Tokens",
+   "read_only": 1
+  },
+  {
+   "description": "Prompt tokens served from the provider's prompt cache.",
+   "fieldname": "cached_tokens",
+   "fieldtype": "Int",
+   "label": "Cached Tokens",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completion_tokens",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Completion Tokens",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tokens",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Tokens spent on internal reasoning / thinking by reasoning models.",
+   "fieldname": "reasoning_tokens",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Reasoning Tokens",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_tokens",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Tokens",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_section",
+   "fieldtype": "Section Break",
+   "label": "Cost & Performance"
+  },
+  {
+   "description": "Total cost of the generation, in USD.",
+   "fieldname": "total_cost",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Cost (USD)",
+   "precision": "9",
+   "read_only": 1
+  },
+  {
+   "description": "Discount applied due to prompt caching, in USD.",
+   "fieldname": "cache_discount",
+   "fieldtype": "Float",
+   "label": "Cache Discount (USD)",
+   "precision": "9",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_cost",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Time spent generating the response, in milliseconds.",
+   "fieldname": "generation_time_ms",
+   "fieldtype": "Int",
+   "label": "Generation Time (ms)",
+   "read_only": 1
+  },
+  {
+   "description": "Total round-trip latency, in milliseconds.",
+   "fieldname": "latency_ms",
+   "fieldtype": "Int",
+   "label": "Latency (ms)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "Set after cost & performance metadata has been fetched from OpenRouter's /generation endpoint.",
+   "fieldname": "metadata_fetched",
+   "fieldtype": "Check",
+   "label": "Metadata Fetched",
+   "read_only": 1
+  },
+  {
+   "fieldname": "raw_section",
+   "fieldtype": "Section Break",
+   "label": "Raw Response"
+  },
+  {
    "fieldname": "reply",
    "fieldtype": "JSON",
-   "label": "Reply"
+   "label": "Reply",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-29 12:37:33.348886",
+ "modified": "2026-04-30 10:16:52.236891",
  "modified_by": "Administrator",
  "module": "Openrouter Frappe",
  "name": "OpenRouter Log",
@@ -40,5 +185,6 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "generation_id"
 }
