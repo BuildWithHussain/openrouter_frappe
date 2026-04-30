@@ -13,4 +13,4 @@ class OpenRouterSettings(Document):
 			response = client.credits.get_credits()
 			data = response.data
 			return data.total_credits - data.total_usage
-		return 0.9
+		return 0.0
