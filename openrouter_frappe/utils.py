@@ -26,10 +26,10 @@ def get_openrouter_client():
     return OpenRouter(api_key=get_openrouter_key())
 
 
-def get_chat_completion(messages: list):
+def get_chat_completion(messages: list, model: str | None = None):
     with get_openrouter_client() as client:
         response = client.chat.send(
-            model=get_default_model(),
+            model=model or get_default_model(),
             messages=messages
         )
 

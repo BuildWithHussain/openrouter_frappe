@@ -116,4 +116,6 @@ class InvoiceProcessor:
 
 
 def process_communication(doc, event=None):
+    if not frappe.db.get_single_value("OpenRouter Settings", "enable_invoice_processor"):
+        return
     InvoiceProcessor(doc).process()

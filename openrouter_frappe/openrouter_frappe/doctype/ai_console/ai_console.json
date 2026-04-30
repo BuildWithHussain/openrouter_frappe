@@ -5,10 +5,17 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "model",
   "message",
   "output"
  ],
  "fields": [
+  {
+   "description": "Pick a model to test with. Leave blank to use the default from OpenRouter Settings.",
+   "fieldname": "model",
+   "fieldtype": "Autocomplete",
+   "label": "Model"
+  },
   {
    "fieldname": "message",
    "fieldtype": "Code",

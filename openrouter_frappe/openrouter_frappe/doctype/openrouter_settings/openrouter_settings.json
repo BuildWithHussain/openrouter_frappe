@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "default_model",
+  "enable_invoice_processor",
   "column_break_fway",
   "credits"
  ],
@@ -14,6 +15,13 @@
    "fieldname": "default_model",
    "fieldtype": "Autocomplete",
    "label": "Default Model"
+  },
+  {
+   "default": "0",
+   "description": "Auto-extract invoice data from PDF attachments on incoming Communications and create draft Purchase Invoices.",
+   "fieldname": "enable_invoice_processor",
+   "fieldtype": "Check",
+   "label": "Enable Invoice Processor"
   },
   {
    "fieldname": "column_break_fway",
